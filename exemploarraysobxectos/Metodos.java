@@ -1,6 +1,6 @@
 
 package exemploarraysobxectos;
-
+import java.util.Arrays;
 
 public class Metodos {
     //xogador[] xogadores = new xogador[elementos()];
@@ -13,9 +13,9 @@ public class Metodos {
         String nom;
         int dor;
         for(int i=0; i<xogadores.length; i++){
-        nom=PedirDatos.pedirString("dorsal");
-        dor=PedirDatos.pedirInt("dorsal");
-        xogadores[i]= new xogador(nom,dor);
+        nom=PedirDatos.pedirString("nome: ");
+        dor=PedirDatos.pedirInt("dorsal: ");
+        xogadores[i]= new xogador(nom,dor); 
         
       //  xogadores[i]=new xogador(PedirDatos.pedirString());
             
@@ -28,5 +28,12 @@ public class Metodos {
     public void amosaArray(xogador[]lista){
         for(xogador elemento:lista)
             System.out.println(elemento);
+   }
+    
+    public void ordenarDorsal(xogador[]lista) {
+        Arrays.sort(lista);
+    }
+    public void ordenarNombre(xogador[]lista){
+        Arrays.sort(lista);
     }
 }

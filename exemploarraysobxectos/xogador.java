@@ -2,25 +2,28 @@
 package exemploarraysobxectos;
 
 
-public class xogador {
-    String xogador;
-    int dorsal;
+public class xogador implements Comparable {
+    private String nome;
+    private int dorsal;
 
-    public xogador(String xogador, int dorsal) {
-        this.xogador = xogador;
+    public xogador() {
+    }
+
+    public xogador(String nome, int dorsal) {
+        this.nome = nome;
         this.dorsal = dorsal;
     }
 
-    public String getXogador() {
-        return xogador;
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public int getDorsal() {
         return dorsal;
-    }
-
-    public void setXogador(String xogador) {
-        this.xogador = xogador;
     }
 
     public void setDorsal(int dorsal) {
@@ -29,7 +32,31 @@ public class xogador {
 
     @Override
     public String toString() {
-        return "xogador{" + "xogador=" + xogador + ", dorsal=" + dorsal + '}';
+        return "nome=" + nome + ", dorsal=" + dorsal;
     }
+
+
+   /* @Override
+    public int compareTo(Object o){
+        Xogador x = (Xogador) o;
+        if(this.dorsal<x.dorsal)
+            return -1;
+        else if(this.dorsal>x.dorsal)
+            return 1;
+        else
+        return 0;
+    }*/
+    
+    @Override
+    public int compareTo(Object o){
+        xogador x = (xogador) o;
+        if(this.nome.compareToIgnoreCase(x.nome) == 0)
+            return 0;
+        else if(this.nome.compareToIgnoreCase(x.nome) > 0)
+            return 1;
+        else
+            return -1;
+    }
+    
     
 }

@@ -1,4 +1,4 @@
-
+    
 package exemploarraysobxectos;
 
 import javax.swing.JOptionPane;
@@ -10,7 +10,7 @@ public class PedirDatos {
          
      }
      public static int pedirInt(String mensaxe){
-         return Integer.parseInt(JOptionPane.showInputDialog("teclea int :"));
+         return Integer.parseInt(JOptionPane.showInputDialog(mensaxe));
          
      }
      
